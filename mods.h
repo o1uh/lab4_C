@@ -468,3 +468,64 @@ void del(School* scl) {
         break;
     }
 }
+int merge(School *scl) {
+    if ((*scl).getN_cl() > 1) {
+        string b1, b2;
+        int p = 0, num1, num2, v, n = (*scl).getN_cl();
+        do {
+            printf("Введите номер класса который оставить (1-11): ");
+            v = scanf("%d", &num1);
+            while (getchar() != '\n');
+        } while (num1 > 11 || num1 < 1 || v < 1);
+
+        printf("Введите букву этого класса: ");
+        cin >> setw(1) >> b1;
+        
+        for (int i = 0; i < n; i++) {
+            if ((*scl).cls[i].getB() == b1 && num1 == (*scl).cls[i].getNum()) {
+                do {
+                    printf("Введите номер класса который слить (1-11): ");
+                    v = scanf("%d", &num2);
+                    while (getchar() != '\n');
+                } while (num2 > 11 || num2 < 1 || v < 1);
+
+                printf("Введите букву этого класса: ");
+                cin >> setw(1) >> b2;
+                for (int j = 0; j < n; i++) {
+                    if ((*scl).cls[j].getB() == b1 && num1 == (*scl).cls[j].getNum()) {
+                        if ((*scl).cls[j].getCount() + (*scl).cls[i].getCount() <= 30) {
+                            (*scl).cls[i] + (*scl).cls[j];
+                            red_avg(scl, i, (*scl).cls[i].getCount());
+                            for (int k = i; k < n; k++) {
+                                (*scl).cls[k] = (*scl).cls[k + 1];
+                            }
+                            (*scl).setN_cl((*scl).getN_cl() - 1);
+                            p = 1;
+                        }
+                        else {
+                            printf("Мест в классе недостаточно для объединения");
+                            cl();
+                            return 0;
+                        }
+                    }
+                }
+                
+                if (p == 0) {
+                    printf("Такого класса нет");
+                    cl();
+                }
+                return 0;
+            }
+
+        }
+        if (p == 0) {
+            printf("Такого класса нет");
+            cl();
+        }
+    }
+    else {
+        printf("Нет классов для объединения");
+        cl();
+        return 0;
+    }
+}

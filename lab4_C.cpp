@@ -13,7 +13,7 @@ int main() {
 			v = scanf("%d", &c);
 			while (getchar() != '\n');
 			system("cls");
-		} while (c > 5 || c < 1 || v < 1);
+		} while (c > 6 || c < 1 || v < 1);
 		switch (c)
 		{
 		case 1: {
@@ -33,16 +33,20 @@ int main() {
 			break;
 		}
 		case 5: {
+
+			break;
+		case 6: {
 			exit(EXIT_SUCCESS);
 			break;
 		}
 		default:
 			break;
 		}
-		/*create_class(&a);
-		vivod_scl(&a, a.n_cl);
+			  /*create_class(&a);
+			  vivod_scl(&a, a.n_cl);
 
-		vivod_cls(&a, a.n_cl - 1);
-		red_class(&a);*/
+			  vivod_cls(&a, a.n_cl - 1);
+			  red_class(&a);*/
+		}
 	}
 }
