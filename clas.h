@@ -6,7 +6,8 @@ private:
     int count;
     float avg;
 
-public:    Student stt[30];
+public:    
+      Student stt[30];
       Clas() {}
       void setNum(int nNum) {
           num = nNum;
@@ -39,5 +40,6 @@ public:    Student stt[30];
           this->count += clas.count;
           return *this;
       }
+      
 
 };
