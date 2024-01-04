@@ -13,6 +13,7 @@ using namespace std;
 #include <wchar.h>
 #include <windows.h>
 #include <iomanip>
+#include <string>
 
 #include "attestat.h"
 #include "student.h"
@@ -70,9 +71,10 @@ void menu() {
         "Редактирование",
         "Объеденить классы",
         "Узнать кол - во классов",
-        "Выход из программы"
+        "Выход из программы",
+        "Тест обработки исключений"
     };
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 8; i++) {
         cout << i+1<< ")" << razdel[i]<<endl;
     }
     cout << endl;

@@ -1,5 +1,17 @@
 ﻿#include "mods.h"
-
+class test {
+private:
+	string s;
+public:
+	void setS(string s) {
+		if (s == "")
+			throw string{ "Пустая строка" };
+		this->s = s;
+	}
+	string getS() {
+		return this->s;
+	}
+};
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
@@ -13,7 +25,7 @@ int main() {
 			v = scanf("%d", &c);
 			while (getchar() != '\n');
 			system("cls");
-		} while (c > 6 || c < 1 || v < 1);
+		} while (c > 8 || c < 1 || v < 1);
 
 		switch (c) {
 		case 1: {
@@ -44,6 +56,20 @@ int main() {
 		case 7: {
 			exit(EXIT_SUCCESS);
 			break;
+		}
+		case 8: {
+			string s;
+			test t;
+			cout << "Введите строку: ";
+			getline(cin, s);
+			try {
+				t.setS(s);
+				cout << "Вы ввели: " << t.getS() << endl;
+			}
+			catch (...) {
+				cout << "Ошибка ввода" << endl;
+			}
+			cl();
 		}
 		default:
 			break;
