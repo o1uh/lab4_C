@@ -1,4 +1,5 @@
 #pragma once
+
 class Student {
 private:
     string fio;
@@ -10,9 +11,8 @@ public:
         this->fio = fio;
     }
     static void setCount(int n) { count += n; }
-    string* getFio() {
+    string *getFio() {
         return &fio;
     }
-    int getCount() { return count; }
-};
     
+};

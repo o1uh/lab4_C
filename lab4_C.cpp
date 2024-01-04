@@ -37,6 +37,11 @@ int main() {
 			break;
 		}
 		case 6: {
+			printN_cl(&a);
+			cl();
+			break;
+		}
+		case 7: {
 			exit(EXIT_SUCCESS);
 			break;
 		}

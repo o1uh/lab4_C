@@ -1,4 +1,5 @@
 #pragma once
+using namespace std;
 #define _CRT_SECURE_NO_WARNINGS
 #define PI 3.141593
 #include <stdio.h>
@@ -19,7 +20,7 @@
 #include "school.h"
 
 
-using namespace std;
+
 
 void cl() { // ф-я очистки, только после нажатия
     printf("\n\nНажмите любую клавишу, чтобы продолжить...");
@@ -67,9 +68,11 @@ void menu() {
         "Добавление",
         "Удаление",
         "Редактирование",
+        "Объеденить классы",
+        "Узнать кол - во классов",
         "Выход из программы"
     };
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 7; i++) {
         cout << i+1<< ")" << razdel[i]<<endl;
     }
     cout << endl;
@@ -491,12 +494,12 @@ int merge(School *scl) {
 
                 printf("Введите букву этого класса: ");
                 cin >> setw(1) >> b2;
-                for (int j = 0; j < n; i++) {
-                    if ((*scl).cls[j].getB() == b1 && num1 == (*scl).cls[j].getNum()) {
+                for (int j = 0; j < n; j++) {
+                    if ((*scl).cls[j].getB() == b2 && num2 == (*scl).cls[j].getNum()) {
                         if ((*scl).cls[j].getCount() + (*scl).cls[i].getCount() <= 30) {
                             (*scl).cls[i] + (*scl).cls[j];
                             red_avg(scl, i, (*scl).cls[i].getCount());
-                            for (int k = i; k < n; k++) {
+                            for (int k = j; k < n; k++) {
                                 (*scl).cls[k] = (*scl).cls[k + 1];
                             }
                             (*scl).setN_cl((*scl).getN_cl() - 1);

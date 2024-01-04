@@ -18,6 +18,9 @@ public:
     int getN_cl() {
         return n_cl;
     }
+    friend void printN_cl(School* scl);
 };
-
+void printN_cl(School *scl) {
+    cout << "Всего классов: " << (*scl).n_cl << endl;
+}
 

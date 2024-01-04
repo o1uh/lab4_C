@@ -34,10 +34,12 @@ public:
           return avg;
       }
       Clas operator + (const Clas &clas) {
-          for (int i = this->count; i < this->count + clas.count; i++) {
+          for (int i = 0; i < clas.count; i++) {
               this->stt[this->count + i] = clas.stt[i];
 
           }
+          this->count += clas.count;
+          return *this;
       }
 
 };
