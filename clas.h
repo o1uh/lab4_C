@@ -36,10 +36,8 @@ public:
       Clas operator + (const Clas &clas) {
           for (int i = this->count; i < this->count + clas.count; i++) {
               this->stt[this->count + i] = clas.stt[i];
+
           }
-          this->count += clas.count;
-          return *this;
       }
-      
 
 };
